@@ -12,7 +12,134 @@
         android:layout_height="match_parent"
         app:use_controller="true"
         app:show_buffering="always"
-        app:resize_mode="fit"
-        app:controller_layout_id="@layout/custom_player_controls"/>
+        app:resize_mode="fit"/>
+
+    <!-- Volume Gesture Indicator (left side) -->
+    <LinearLayout
+        android:id="@+id/volumeIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginStart="24dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_duration"
+        android:padding="12dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/volumeIcon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_volume_up"
+            android:contentDescription="Volume"/>
+
+        <ProgressBar
+            android:id="@+id/volumeProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="4dp"
+            android:layout_height="120dp"
+            android:max="100"
+            android:progress="50"
+            android:rotation="180"
+            android:progressDrawable="@android:drawable/progress_horizontal"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/volumeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="4dp"
+            android:text="50%"/>
+    </LinearLayout>
+
+    <!-- Brightness Gesture Indicator (right side) -->
+    <LinearLayout
+        android:id="@+id/brightnessIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_duration"
+        android:padding="12dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_brightness"
+            android:contentDescription="Brightness"/>
+
+        <ProgressBar
+            android:id="@+id/brightnessProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="4dp"
+            android:layout_height="120dp"
+            android:max="100"
+            android:progress="50"
+            android:rotation="180"
+            android:progressDrawable="@android:drawable/progress_horizontal"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/brightnessText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="4dp"
+            android:text="50%"/>
+    </LinearLayout>
+
+    <!-- Zoom Indicator (center) -->
+    <LinearLayout
+        android:id="@+id/zoomIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_duration"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_zoom_in"
+            android:contentDescription="Zoom"/>
+
+        <TextView
+            android:id="@+id/zoomText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginStart="8dp"
+            android:text="1.0x"/>
+    </LinearLayout>
+
+    <!-- Resize Mode Indicator (top-right) -->
+    <TextView
+        android:id="@+id/resizeModeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_duration"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-medium"
+        android:visibility="gone"/>
 
 </FrameLayout>
