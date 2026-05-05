@@ -1,0 +1,22 @@
+{
+    "java.jdt.ls.java.home": "C:\\Program Files\\Java\\latest\\jdk-26",
+    "java.import.gradle.java.home": "C:\\Program Files\\Java\\latest\\jdk-26",
+    "java.home": "C:\\Program Files\\Java\\latest\\jdk-26",
+    "gradle.java.home": "C:\\Program Files\\Java\\latest\\jdk-26",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "C:\\Program Files\\Java\\latest\\jdk-26",
+            "default": true
+        },
+        {
+            "name": "JavaSE-26",
+            "path": "C:\\Program Files\\Java\\latest\\jdk-26",
+            "default": true
+        }
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.import.gradle.jvmArguments": [
+        "-Dorg.gradle.java.home=C:\\Program Files\\Java\\latest\\jdk-26"
+    ]
+}
