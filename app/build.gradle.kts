@@ -43,6 +43,7 @@ dependencies {
     implementation(libs.media3.session)
     implementation(libs.glide)
     implementation(libs.swiperefreshlayout)
+    implementation(libs.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

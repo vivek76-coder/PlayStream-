@@ -57,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         btnGrantPermission = findViewById(R.id.btnGrantPermission);
 
+        // Style SwipeRefreshLayout
+        swipeRefresh.setColorSchemeColors(
+                getColor(R.color.primary),
+                getColor(R.color.secondary));
+        swipeRefresh.setProgressBackgroundColorSchemeColor(
+                getColor(R.color.surface_card));
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         videoAdapter = new VideoAdapter(this);
         recyclerView.setAdapter(videoAdapter);

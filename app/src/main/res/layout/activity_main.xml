@@ -5,20 +5,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface"
+    android:background="@color/surface_dark"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorSurface">
+        android:background="@color/surface_dark"
+        app:elevation="0dp">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="64dp"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             app:title="PlayStream"
-            app:titleTextColor="?attr/colorOnSurface"/>
+            app:titleTextAppearance="@style/PlayStream.ToolbarTitle"
+            app:subtitleTextColor="@color/on_surface_variant"/>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -32,9 +38,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:padding="8dp"/>
+            android:paddingHorizontal="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="16dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"/>
+
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <!-- Permission Required Layout -->
     <LinearLayout
         android:id="@+id/permissionLayout"
         android:layout_width="match_parent"
@@ -42,44 +54,59 @@
         android:orientation="vertical"
         android:gravity="center"
         android:visibility="gone"
-        android:padding="32dp">
-        
+        android:padding="40dp"
+        android:background="@color/surface_dark">
+
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@android:drawable/ic_menu_gallery"
-            app:tint="?attr/colorPrimary"/>
-            
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_video_library"
+            android:alpha="0.8"
+            android:contentDescription="Video library icon"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Storage Permission Required"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:textColor="?attr/colorOnSurface"/>
-            
+            android:layout_marginTop="24dp"
+            android:textColor="@color/on_surface"
+            android:fontFamily="sans-serif-medium"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="We need storage access to find and play videos on your device."
+            android:text="We need access to find and play\nvideos on your device."
             android:textAlignment="center"
-            android:layout_marginTop="8dp"
-            android:textColor="?attr/colorOnSurfaceVariant"/>
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="12dp"
+            android:textSize="15sp"
+            android:textColor="@color/on_surface_variant"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnGrantPermission"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Grant Permission"/>
+            android:layout_height="52dp"
+            android:layout_marginTop="32dp"
+            android:paddingHorizontal="32dp"
+            android:text="Grant Permission"
+            android:textSize="15sp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/on_primary"
+            app:cornerRadius="26dp"
+            app:iconGravity="textStart"
+            app:rippleColor="@color/ripple_color"/>
     </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_gravity="center"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:indeterminateTint="@color/primary"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
